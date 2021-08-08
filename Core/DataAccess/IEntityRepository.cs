@@ -1,4 +1,4 @@
-﻿using Entities.Abstract;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,12 +6,14 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Abstract
+namespace Core.DataAccess
 {
+    //core katmanı diğer katanları almaz
     //generic constraint
-    // class:referans tip olabilir demek
-    //IEntity : Ientity olabilir veya IEntity implement eden bir nesne olabilir
-    //new() : new'lenebilir olmalı
+    //T nin hangi türdeki parametreler olduğuna aşağıdaki isimlendirmeler ile karar veriyoruz
+    //class:referans tip olabilir demek
+    //IEntity:Ientity olabilir veya IEntity implement eden bir nesne olabilir
+    //new():new'lenebilir olmalı demek
     //parametrerelri aşağıdaki gibi koşullar ile seçiyoruz
     public interface IEntityRepository<T> where T:class,IEntity,new()
     {
